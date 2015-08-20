@@ -363,9 +363,9 @@ func (c *linuxContainer) Checkpoint(criuOpts *CriuOpts) error {
 		Pid:            proto.Int32(int32(c.initProcess.pid())),
 		ShellJob:       proto.Bool(criuOpts.ShellJob),
 		LeaveRunning:   proto.Bool(criuOpts.LeaveRunning),
-		TcpEstablished: proto.Bool(criuOpts.TcpEstablished),
+		TcpEstablished: proto.Bool(true),
 		ExtUnixSk:      proto.Bool(criuOpts.ExternalUnixConnections),
-		FileLocks:      proto.Bool(criuOpts.FileLocks),
+		FileLocks:      proto.Bool(true),
 	}
 
 	// append optional criu opts, e.g., page-server and port
