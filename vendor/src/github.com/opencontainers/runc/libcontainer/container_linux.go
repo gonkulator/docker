@@ -500,8 +500,8 @@ func (c *linuxContainer) Restore(process *Process, criuOpts *CriuOpts) error {
 			NotifyScripts:  proto.Bool(true),
 			ShellJob:       proto.Bool(criuOpts.ShellJob),
 			ExtUnixSk:      proto.Bool(criuOpts.ExternalUnixConnections),
-			TcpEstablished: proto.Bool(criuOpts.TcpEstablished),
-			FileLocks:      proto.Bool(criuOpts.FileLocks),
+			TcpEstablished: proto.Bool(true),
+			FileLocks:      proto.Bool(true),
 		},
 	}
 	for _, m := range c.config.Mounts {
